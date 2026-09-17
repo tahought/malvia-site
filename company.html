@@ -1,45 +1,146 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>COMPANY — MALVIA</title>
-  <meta name="description" content="MALVIA（AGO株式会社）の会社概要。">
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COMPANY — MALVIA</title>
+<meta name="description" content="MALVIA（AGO株式会社）について。日本で作り、日本から世界へ。">
+<style>
+:root{
+  --ink-950:#04192B; --ink-900:#06253F; --ink-800:#06253F; --ink-700:#123049; --ink-600:#1E4460; --ink-500:#4A6B84;
+  --sunset-500:#C9A96A; --sunset-600:#B3925A; --sunset-700:#997C4A; --gold-300:#DCC593; --gold-200:#EBDDC0;
+  --sand-50:#FFFFFF; --sand-100:#FFFFFF; --sand-200:#F2F2F0; --sand-300:#DDDCD8; --sand-400:#B9B7B1;
+  --text-body:#5C6B78; --text-muted:#8A95A0; --line:rgba(6,37,63,0.14); --line-on-ink:rgba(246,241,232,0.20);
+  --jp-serif:'Times New Roman','Zen Old Mincho','Yu Mincho','游明朝',serif;
+  --jp-sans:'Times New Roman','Zen Old Mincho','Yu Mincho','游明朝',serif;
+  --font-brand:'Times New Roman','Zen Old Mincho',serif;
+  --font-display:'Times New Roman','Zen Old Mincho',serif;
+  --font-sans:'Times New Roman','Zen Old Mincho',serif;
+}
+body { margin: 0; background: #FFFFFF; }
+img { display: block; }
+.cp-cta { text-decoration: none; transition: background .26s ease, color .26s ease, border-color .26s ease; }
+.cp-cta:hover { background:#F8F4EC; color:var(--ink-900) !important; border-color:#F8F4EC; }
+</style>
 </head>
-<body data-page="company" data-root="">
+<body>
 
-  <header id="site-header"></header>
+<header id="site-header"></header>
+<div style="background:var(--sand-100); color:var(--text-body); font-family:var(--font-sans); overflow-x:hidden;">
 
-  <main>
-    <div class="cp">
-      <div class="cp__head">
-        <h1 class="cp__t">COMPANY</h1>
-        <p class="cp__sub">会社概要</p>
+  <section style="position:relative; height:clamp(440px, 58vw, 820px); min-height:min(78vh, 640px); overflow:hidden;">
+    <div style="position:absolute; inset:0;">
+      <img src="assets/img/company-hero.jpg" alt="MALVIA" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; touch-action:pan-y; user-select:none; pointer-events:none;">
+    </div>
+    <div style="position:absolute; inset:0; background:linear-gradient(105deg, rgba(4,25,43,0.80) 0%, rgba(4,25,43,0.52) 42%, rgba(4,25,43,0.14) 78%); pointer-events:none;"></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(6,37,63,0.28) 0%, rgba(6,37,63,0.04) 30%, rgba(255,255,255,0.18) 74%, rgba(255,255,255,0.55) 93%, #FFFFFF 100%); pointer-events:none;"></div>
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:clamp(18px,3vw,26px); padding:clamp(64px,10vw,104px) clamp(24px, 6vw, 88px) 0; pointer-events:none;">
+      <h1 style="margin:0; font-family:var(--jp-serif); font-size:clamp(28px, 6.4vw, 58px); line-height:1.5; letter-spacing:clamp(0.08em,1vw,0.16em); font-weight:400; color:#FFFFFF; text-shadow:0 2px 24px rgba(4,25,43,0.45); word-break:keep-all;">日本で作り、<br>日本から世界へ。</h1>
+      <p style="margin:0; max-width:32em; font-family:var(--jp-sans); font-size:clamp(13px,3.4vw,15px); line-height:1.9; letter-spacing:0.08em; color:#FFFFFF; text-shadow:0 1px 16px rgba(4,25,43,0.6);">MALVIA — 日本の工場でつくる、ユニセックスシューズ。</p>
+    </div>
+  </section>
+
+  <section style="max-width:820px; margin:0 auto; padding:clamp(72px,10vw,128px) clamp(24px,6vw,72px); text-align:center;">
+    <span style="display:block; font-family:var(--font-brand); font-size:10px; letter-spacing:0.3em; color:var(--ink-900);">CONCEPT</span>
+    <h2 style="margin:22px 0 30px; font-family:var(--jp-serif); font-size:clamp(21px,4.6vw,32px); font-weight:400; line-height:1.9; letter-spacing:0.09em; color:var(--ink-900); text-wrap:pretty;">海と街を自由に行き来する、<br>大人のための一足を。</h2>
+    <p style="margin:0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,14.5px); line-height:2.15; color:var(--text-body); text-wrap:pretty;">MALVIA は、日本国内の工場で生産するユニセックスシューズブランドです。<br>アメリカ西海岸の自由で自然体な空気感と、日本の職人による丁寧なものづくり。<br>そのふたつが交わる場所に、日常に溶け込む上質な革靴があります。</p>
+    <img src="assets/img/wave.png" alt="" style="width:clamp(72px,14vw,96px); height:auto; margin-top:clamp(32px,5vw,44px); opacity:0.55;">
+  </section>
+
+  <section style="background:var(--ink-900); color:#EDE6DA;">
+    <div style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));">
+      <div style="padding:clamp(72px,9vw,120px) clamp(24px,5vw,72px); min-width:0; display:flex; flex-direction:column; justify-content:center;">
+        <span style="display:block; font-family:var(--font-brand); font-size:10px; letter-spacing:0.3em; color:#F8F4EC;">THE ORIGIN</span>
+        <h2 style="margin:22px 0 0; font-family:var(--jp-serif); font-size:clamp(21px,4.4vw,30px); font-weight:400; line-height:1.85; letter-spacing:0.09em; color:#F8F4EC;">27年の経験と、<br>25年の波。</h2>
+        <div style="width:36px; height:1px; margin:32px 0; background:rgba(248,244,236,0.45);"></div>
+        <p style="margin:0 0 22px; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,14.5px); line-height:2.15; color:#D6CFC2; text-wrap:pretty;">靴業界で商品企画・生産・販売に27年以上携わる中で感じていたのは、本当に長く愛せる一足が少なくなっているということ。流行だけを追うのではなく、履く人の人生に寄り添う靴をつくりたい。それが MALVIA の原点です。</p>
+        <p style="margin:0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,14.5px); line-height:2.15; color:#D6CFC2; text-wrap:pretty;">25年以上続けているサーフィンが教えてくれたのは、豊かさとは競争ではなく、自分らしく生きることだということ。朝日が昇る海、波を待つ静かな時間。その価値観を靴という形に置き換えています。</p>
       </div>
-      <div class="cp__body">
-        <dl class="cp__dl">
-          <dt>会社名</dt>
-          <dd>AGO株式会社</dd>
-          <dt>所在地</dt>
-          <dd>〒651-0087<br>兵庫県神戸市中央区御幸通8-1-6 神戸国際会館22F</dd>
-          <dt>代表者</dt>
-          <dd>代表取締役　松本 雅広</dd>
-          <dt>設立</dt>
-          <dd>2026年7月19日</dd>
-          <dt>法人番号</dt>
-          <dd>3140001143509</dd>
-          <dt>電話番号</dt>
-          <dd>078-570-0188</dd>
-          <dt>メールアドレス</dt>
-          <dd>contact@malviafootwear.com</dd>
-        </dl>
+      <div style="min-height:clamp(300px,46vw,620px); min-width:0; position:relative; overflow:hidden; background:#0A2E4C;">
+        <img src="assets/img/company-origin.jpg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%; touch-action:pan-y; user-select:none; pointer-events:none;">
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer id="site-footer"></footer>
+  <section style="max-width:1240px; margin:0 auto; padding:clamp(72px,10vw,128px) clamp(24px,6vw,72px) 0;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:clamp(20px,3vw,40px);">
+      <div style="position:relative; width:100%; aspect-ratio:4/5; background:var(--sand-200);">
+        <img src="assets/img/company-detail-1.webp" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; touch-action:pan-y; user-select:none; pointer-events:none;">
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:4/5; background:var(--sand-200); margin-top:clamp(0px,5vw,64px);">
+        <img src="assets/img/company-detail-2.webp" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; touch-action:pan-y; user-select:none; pointer-events:none;">
+      </div>
+    </div>
+  </section>
 
-  <script src="assets/js/layout.js"></script>
+  <section style="max-width:1240px; margin:0 auto; padding:clamp(72px,10vw,128px) clamp(24px,6vw,72px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+      <div style="border-left:1px solid var(--line); padding:0 0 clamp(36px,5vw,48px); display:flex; flex-direction:column;">
+        <div style="position:relative; width:100%; aspect-ratio:3/2; background:var(--sand-200);">
+          <img src="assets/img/company-pillar-1.webp" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; touch-action:pan-y; user-select:none; pointer-events:none;">
+        </div>
+        <span style="margin:clamp(26px,4vw,36px) clamp(22px,4vw,40px) 0; font-family:var(--font-brand); font-size:10px; letter-spacing:0.3em; color:var(--ink-900);">JAPAN MADE</span>
+        <h3 style="margin:16px clamp(22px,4vw,40px) 0; font-family:var(--jp-serif); font-weight:400; font-size:clamp(19px,3.6vw,21px); line-height:1.8; letter-spacing:0.09em; color:var(--ink-900);">日本の工場で、一足ずつ</h3>
+        <p style="margin:14px clamp(22px,4vw,40px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,14.5px); line-height:2.15; color:var(--text-body); text-wrap:pretty;">裁断から仕上げまで、国内の靴工場で職人の手を通ります。</p>
+      </div>
+      <div style="border-left:1px solid var(--line); padding:0 0 clamp(36px,5vw,48px); display:flex; flex-direction:column;">
+        <div style="position:relative; width:100%; aspect-ratio:3/2; background:var(--sand-200);">
+          <img src="assets/img/company-pillar-2.webp" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; touch-action:pan-y; user-select:none; pointer-events:none;">
+        </div>
+        <span style="margin:clamp(26px,4vw,36px) clamp(22px,4vw,40px) 0; font-family:var(--font-brand); font-size:10px; letter-spacing:0.3em; color:var(--ink-900);">WEST COAST</span>
+        <h3 style="margin:16px clamp(22px,4vw,40px) 0; font-family:var(--jp-serif); font-weight:400; font-size:clamp(19px,3.6vw,21px); line-height:1.8; letter-spacing:0.09em; color:var(--ink-900);">自由で、自然体な佇まい</h3>
+        <p style="margin:14px clamp(22px,4vw,40px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,14.5px); line-height:2.15; color:var(--text-body); text-wrap:pretty;">西海岸の午後のような、かしこまらない軽やかさを持たせて。</p>
+      </div>
+      <div style="border-left:1px solid var(--line); padding:0 0 clamp(36px,5vw,48px); display:flex; flex-direction:column;">
+        <div style="position:relative; width:100%; aspect-ratio:3/2; background:var(--sand-200);">
+          <img src="assets/img/company-pillar-3.webp" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; touch-action:pan-y; user-select:none; pointer-events:none;">
+        </div>
+        <span style="margin:clamp(26px,4vw,36px) clamp(22px,4vw,40px) 0; font-family:var(--font-brand); font-size:10px; letter-spacing:0.3em; color:var(--ink-900);">FOR YEARS</span>
+        <h3 style="margin:16px clamp(22px,4vw,40px) 0; font-family:var(--jp-serif); font-weight:400; font-size:clamp(19px,3.6vw,21px); line-height:1.8; letter-spacing:0.09em; color:var(--ink-900);">長く愛用できる一足</h3>
+        <p style="margin:14px clamp(22px,4vw,40px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,14.5px); line-height:2.15; color:var(--text-body); text-wrap:pretty;">流行に左右されないデザインと、日々を歩ける履き心地を。</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--ink-900); color:#EDE6DA;">
+    <div style="max-width:880px; margin:0 auto; padding:clamp(72px,10vw,128px) clamp(24px,6vw,72px); display:flex; flex-direction:column; align-items:center; gap:30px; text-align:center;">
+      <img src="assets/img/wave-closing.png" alt="" style="width:110px; height:auto; opacity:0.6;">
+      <p style="margin:0; font-family:var(--jp-serif); font-size:clamp(20px,4.2vw,30px); font-weight:400; line-height:2.1; letter-spacing:0.12em; color:#F8F4EC; text-wrap:pretty;">日本で作り、日本から世界へ。</p>
+      <p style="margin:0; max-width:520px; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,14.5px); line-height:2.15; color:#D6CFC2; text-wrap:pretty;">一足の靴が、新しい景色との出会いにつながることを願って。</p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin-top:8px;">
+        <a href="index.html#collection" style="display:inline-block; padding:17px 40px; border:1px solid rgba(248,244,236,0.55); font-family:var(--font-brand); font-size:11px; letter-spacing:0.28em; color:#F8F4EC;" class="cp-cta">SHOP THE COLLECTION</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--ink-900); color:#EDE6DA; padding:clamp(72px,10vw,120px) clamp(24px,6vw,72px);">
+    <div style="max-width:960px; margin:0 auto;">
+      <span style="display:block; font-family:var(--font-brand); font-size:10px; letter-spacing:0.3em; color:#F8F4EC;">COMPANY</span>
+      <h2 style="margin:20px 0 clamp(40px,6vw,56px); font-family:var(--jp-serif); font-weight:400; font-size:clamp(21px,4.4vw,28px); letter-spacing:0.12em; color:#F8F4EC;">会社概要</h2>
+      <dl style="margin:0; display:grid; grid-template-columns:minmax(120px,220px) minmax(0,1fr); border-top:1px solid rgba(248,244,236,0.22);">
+        <dt style="padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(11px,2.6vw,12.5px); letter-spacing:0.22em; color:#A8B4BF; border-bottom:1px solid rgba(248,244,236,0.16);">会社名</dt>
+        <dd style="margin:0; padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,15.5px); line-height:1.85; color:#F8F4EC; border-bottom:1px solid rgba(248,244,236,0.16); word-break:break-word;">AGO株式会社</dd>
+        <dt style="padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(11px,2.6vw,12.5px); letter-spacing:0.22em; color:#A8B4BF; border-bottom:1px solid rgba(248,244,236,0.16);">所在地</dt>
+        <dd style="margin:0; padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,15.5px); line-height:1.85; color:#F8F4EC; border-bottom:1px solid rgba(248,244,236,0.16); word-break:break-word;">〒651-0087　兵庫県神戸市中央区御幸通8-1-6 神戸国際会館22F</dd>
+        <dt style="padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(11px,2.6vw,12.5px); letter-spacing:0.22em; color:#A8B4BF; border-bottom:1px solid rgba(248,244,236,0.16);">代表者</dt>
+        <dd style="margin:0; padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,15.5px); line-height:1.85; color:#F8F4EC; border-bottom:1px solid rgba(248,244,236,0.16); word-break:break-word;">代表取締役　松本 雅広</dd>
+        <dt style="padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(11px,2.6vw,12.5px); letter-spacing:0.22em; color:#A8B4BF; border-bottom:1px solid rgba(248,244,236,0.16);">設立</dt>
+        <dd style="margin:0; padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,15.5px); line-height:1.85; color:#F8F4EC; border-bottom:1px solid rgba(248,244,236,0.16); word-break:break-word;">2026年7月19日</dd>
+        <dt style="padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(11px,2.6vw,12.5px); letter-spacing:0.22em; color:#A8B4BF; border-bottom:1px solid rgba(248,244,236,0.16);">法人番号</dt>
+        <dd style="margin:0; padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,15.5px); line-height:1.85; color:#F8F4EC; border-bottom:1px solid rgba(248,244,236,0.16); word-break:break-word;">3140001143509</dd>
+        <dt style="padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(11px,2.6vw,12.5px); letter-spacing:0.22em; color:#A8B4BF; border-bottom:1px solid rgba(248,244,236,0.16);">電話番号</dt>
+        <dd style="margin:0; padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,15.5px); line-height:1.85; color:#F8F4EC; border-bottom:1px solid rgba(248,244,236,0.16); word-break:break-word;"><a href="tel:0785700188" style="color:#F8F4EC; text-decoration:none; border-bottom:1px solid rgba(248,244,236,0.4); padding-bottom:2px;">078-570-0188</a></dd>
+        <dt style="padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(11px,2.6vw,12.5px); letter-spacing:0.22em; color:#A8B4BF; border-bottom:1px solid rgba(248,244,236,0.16);">メールアドレス</dt>
+        <dd style="margin:0; padding:clamp(24px,3.5vw,32px) 0; font-family:var(--jp-sans); font-size:clamp(13.5px,3.2vw,15.5px); line-height:1.85; color:#F8F4EC; border-bottom:1px solid rgba(248,244,236,0.16); word-break:break-word;"><a href="mailto:contact@malviafootwear.com" style="color:#F8F4EC; text-decoration:none; border-bottom:1px solid rgba(248,244,236,0.4); padding-bottom:2px;">contact@malviafootwear.com</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  
+
+</div>
+<footer id="site-footer"></footer>
+
+<script src="assets/js/layout.js"></script>
 </body>
 </html>

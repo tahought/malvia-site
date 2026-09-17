@@ -7,38 +7,51 @@
 ```
 site/
 ├── index.html              ← ホーム（ヒーロー／コンセプト／COLLECTIONS）
-├── about.html              ← ABOUT（10 COMMITMENTS）
+├── about.html              ← ABOUT（Moccasin / Material / Sole / Made in Japan）
 ├── company.html            ← COMPANY（会社概要）
 ├── products/
 │   ├── malibu.html         ← 商品紹介ページ（ヒーロー／スライダー／スペック）
 │   ├── venice.html
 │   └── rincon.html
+├── .nojekyll               ← GitHub Pages 用（消さないでください）
 └── assets/
     ├── css/style.css       ← 全ページ共通のCSS
-    ├── js/layout.js        ← 共通ヘッダー／フッターを差し込むJS
     ├── css/product.css     ← 商品ページ専用のCSS
+    ├── js/layout.js        ← 共通ヘッダー／フッターを差し込むJS
     ├── js/product.js       ← 商品ページのヒーロー切替＋スライダー
-    └── img/                ← ヒーロー画像・ロゴ
+    ├── img/                ← ヒーロー・ロゴ・COMPANY用の写真
+    └── img/products/       ← 商品写真（malibu / venice / rincon 各9点）
 ```
 
-## 共通パーツのしくみ
+## 共通パーツのしくみ（重要）
 
-`header.html` を fetch する方法は、ローカルでファイルを直接開くと動きません。
-そのため **`assets/js/layout.js` がヘッダーとフッターを書き出す方式**にしています（どの環境でも動きます）。
-
-各ページに必要なのは次の 3 つだけです。
+ヘッダーとフッターは **`assets/js/layout.js` が自動で差し込みます**。
+ページ側に必要なのは、`</body>` の直前の **この1行だけ**です。
 
 ```html
-<body data-page="home" data-root="">   <!-- data-page: home / about / company / product -->
-  <header id="site-header"></header>   <!-- ここにヘッダーが入る -->
-  ...
-  <footer id="site-footer"></footer>   <!-- ここにフッターが入る -->
-  <script src="assets/js/layout.js"></script>
-</body>
+<script src="assets/js/layout.js"></script>      <!-- トップ階層のページ -->
+<script src="../assets/js/layout.js"></script>   <!-- products/ の中のページ -->
 ```
 
-- `data-root` … トップ階層は `""`、`products/` の中は `"../"`
-- `data-page` … 現在のページ。ヘッダーメニューの現在地（金色）が自動で付きます
+この1行があれば、
+
+- ヘッダー／フッターの置き場所（`<header id="site-header">` など）が無くても**自動で作ります**
+- 共通CSS（`style.css` / 商品ページは `product.css`）も**自動で読み込みます**
+- 今どのページか（メニューの金色ハイライト）も**自動で判定します**
+
+### 別で作ったHTMLに差し替えるとき
+
+**やることは1つだけ。`</body>` の直前に上の1行を貼る。**
+
+```html
+  ...ページの中身...
+  <script src="../assets/js/layout.js"></script>   <!-- ← これを足す -->
+</body>
+</html>
+```
+
+これを忘れるとヘッダーとフッターが消えます（前回消えたのはこれが原因です）。
+逆に、この1行さえあれば中身をまるごと書き換えても大丈夫です。
 
 ### メニューを増やしたいとき
 
@@ -54,13 +67,48 @@ var MENU = [
 ];
 ```
 
-新しいページを作るときは `company.html` をコピーして、`data-page` と中身を変えるのが一番簡単です。
+新しいページを作るときは `company.html` をコピーして、中身を変えるのが一番簡単です。
 
-## ローカルで確認する（VS Code / Live Server）
+---
 
-1. VS Code で拡張機能「Live Server」をインストール
-2. `site` フォルダを VS Code で開く
-3. `index.html` を右クリック →「Open with Live Server」
+## プレビューの確認方法（プッシュは不要です）
+
+**結論：見た目の確認にプッシュは要りません。プッシュは「世界に公開するとき」だけ。**
+
+| やりたいこと | 方法 | 反映まで |
+| --- | --- | --- |
+| 自分で確認したい | ローカルの Live Server | 保存した瞬間 |
+| 公開ページを更新したい | GitHub にアップロード（コミット） | 30〜60秒 |
+
+### 方法A：Live Server（いちばん速い・おすすめ）
+
+1. VS Code に拡張機能 **Live Server** をインストール
+2. VS Code で **`site` フォルダを開く**（ファイル → フォルダーを開く）
+3. `index.html` を右クリック → **Open with Live Server**
+4. ブラウザが開きます。以降は **ファイルを保存するだけで自動リロード**
+
+商品ページを直すときは `products/malibu.html` を編集して保存 → ブラウザが勝手に更新されます。
+何度でも試して、納得できたらまとめてアップロードすればOKです。
+
+> ※ HTMLファイルをダブルクリックして開く（`file://`）方法でも一応見られますが、
+> Live Server のほうが公開後の状態に近いので、こちらを使ってください。
+
+### 方法B：GitHub 上で直接編集してプレビュー
+
+PCを使えないときはこちら。
+
+1. GitHub でファイルを開く → 鉛筆アイコン
+2. **Preview** タブで大まかな確認（※CSSは効かないので文章チェック向け）
+3. **Commit changes** → 30〜60秒後に公開ページへ反映
+
+### 更新の流れ（ふだんの作業）
+
+```
+ローカルで編集 → 保存 → Live Server で確認 → OKなら GitHub にアップロード → 公開
+```
+
+公開ページが変わらないときは **Ctrl/⌘ + Shift + R** で強制再読み込み。
+それでも古いままなら、リポジトリの **Actions** タブでデプロイが終わっているか確認してください。
 
 ## GitHub Pages で公開する（ブラウザだけで完結する手順）
 
@@ -99,18 +147,47 @@ var MENU = [
 | 404 になる | `index.html` がリポジトリ直下にない。`site` フォルダごと上げていないか確認 |
 | 文字だけで崩れている | `assets` フォルダが上がっていない |
 | 画像が出ない | `assets/img/products/` の中身が上がっていない（ファイル名の大文字小文字も区別されます） |
-| ヘッダーが出ない | `assets/js/layout.js` が上がっていない |
+| ヘッダーが出ない | ページに `<script src="…/assets/js/layout.js"></script>` が無い、または `assets/js/layout.js` が上がっていない |
+| 商品ページの画像が動かない | `<script src="../assets/js/product.js"></script>` が無い |
 
 ### 注意
 
 - ファイル名・フォルダ名はすべて**小文字**、日本語やスペースは使わない
 - リンクは `/about.html` ではなく `about.html` のような**相対パス**で書く（サブディレクトリ公開でも壊れません）
 
-## 画像について
+---
 
-- 商品写真は `assets/img/products/` に入っています（リポジトリに含まれるので外部依存なし）
-- ABOUT のヒーロー写真だけ Shopify の CDN を参照しています。差し替える場合は画像を
-  `assets/img/` に置き、`about.html` の `https://malviafootwear.com/cdn/...` を書き換えてください
+## どこを直せば何が変わるか（編集ガイド）
+
+| 直したいもの | ファイル | 探す目印 |
+| --- | --- | --- |
+| ヘッダー／フッターのメニュー | `assets/js/layout.js` | `var MENU = [` |
+| フッターの紹介文・Instagram | `assets/js/layout.js` | `TAGLINE` / `INSTAGRAM` |
+| ホームのキャッチコピー | `index.html` | `class="hero__msg"` |
+| ホームのコンセプト文 | `index.html` | `class="concept__body"` |
+| ホームの商品カード（名前・説明・リンク先） | `index.html` | `class="card"` |
+| ABOUT の4項目 | `about.html` | `01` 〜 `04` の `MALVIA STANDARD` |
+| ABOUT の写真枠（現在は空） | `about.html` | `background:#F4EDE1` の `<div>` |
+| 会社概要の表 | `company.html` | `<dl` の中の `<dt>` / `<dd>` |
+| 商品名・キャッチ | `products/◯◯.html` | `class="pr-hero__t"` / `pr-hero__lead` |
+| 商品の仕様表（Upper / Sole / Size / Price） | `products/◯◯.html` | `class="pr-spec"` |
+| 商品ページの配色 | `products/◯◯.html` | `<main class="pr" style="--navy:…">` の1行 |
+| 全ページ共通の見た目 | `assets/css/style.css` | 先頭の `:root{ }` に色をまとめてあります |
+| 商品ページの見た目 | `assets/css/product.css` | — |
+
+### 画像を差し替える
+
+1. 新しい画像を `assets/img/products/` に入れる（ファイル名は半角英数、小文字）
+2. HTML内の `../assets/img/products/malibu-03.webp` の部分を新しいファイル名に書き換える
+
+写真の枚数を変えたときは、同じHTML内の `data-count="5"` の数字と、
+`pr-gal__dot` ボタンの数も合わせてください（5枚→5個）。
+
+## 外部依存はありません
+
+このサイトは **同梱のファイルだけで動きます**。
+外部のCDN・Webフォント・Shopifyの画像などは一切読み込んでいません。
+インターネットに繋がっていないPCでも、そのまま表示できます。
 
 ## 商品ページの色
 
